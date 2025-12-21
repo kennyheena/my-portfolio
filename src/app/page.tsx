@@ -13,6 +13,10 @@ function listTechnicalSkills() {
     "HTML",
     "SQL"];
 
+    const devOps = [
+      "AWS EC2"
+    ]
+
     return (
       <ul className="list-disc list-inside text-left">
         {programmingLanguages.map((programmingLanguages) => (
