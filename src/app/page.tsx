@@ -144,7 +144,7 @@ function footer() {
 export default function Home() {
   return (
   <div className="w-full bg-white dark:bg-gray-900">
-    <div className="flex flex-col items-center justify-center py-80 px-4 bg-white dark:bg-gray-900">
+    <div className="flex flex-col items-center justify-center py-60 px-4 bg-white dark:bg-gray-900">
     {/* HERO SECTION */}
       {heroSection()}
     {/* MAIN CONTENT */}
