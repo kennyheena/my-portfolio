@@ -1,10 +1,3 @@
-// TODO : Adding all the skill lists (programming languages to bounce off the screen) - done
-// TODO : Links for github, linkedin, email - done
-// TODO : Work history section with companies worked for, roles and responsibilities
-// TODO : Projects seciton with templates for projects that I have worked on
-// TODO : Education section with degrees, certifications
-// project immediate.com.au
-
 function heroSection() {
   return (
     <div className="max-w-2xl text-center mb-12">
@@ -17,40 +10,6 @@ function heroSection() {
           I provide solutions for businesses with modern technologies. Passionate about creating efficient, user-friendly solutions.
         </p>
       </div>
-  );
-}
-
-function listTechnicalSkills() {
-  const skillGroups = [
-    { title: "Languages", items: ["JavaScript", "TypeScript", "Objective-C", "PHP", "HTML", "CSS", "SQL"] },
-    { title: "Frontend", items: ["React.js", "Next.js", "Tailwind CSS", "React Bootstrap", "Semantic UI"] },
-    { title: "Backend", items: ["Node.js", "Express.js", "Zend Framework", "RESTful APIs"] },
-    { title: "Databases", items: ["MySQL", "MSSQL Server", "MongoDB"] },
-    { title: "Cloud & DevOps", items: ["EC2", "S3", "Lambda", "RDS", "Amplify", "ELB"] },
-    { title: "Tools & Testing", items: ["Git", "Docker", "Postman", "VS Code", "Shopify", "Jest"] }
-  ];
-
-  return (
-    <div className="w-full my-8">
-      <h2 className="text-2xl font-bold text-black dark:text-white mb-6">Technical Skills</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
-        {skillGroups.map((group) => (
-          <div key={group.title} className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
-            <h3 className="text-lg font-semibold text-black dark:text-white mb-3">{group.title}</h3>
-            <div className="flex flex-wrap gap-2">
-              {group.items.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1 text-sm bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
   );
 }
 
@@ -97,11 +56,77 @@ function contactLinks() {
   );
 }
 
-// function workHisotry() {
-//   const work = [
-//     {}
-//   ] 
-// }
+function listTechnicalSkills() {
+  const skillGroups = [
+    { title: "Languages", items: ["JavaScript", "TypeScript", "Objective-C", "PHP", "HTML", "CSS", "SQL"] },
+    { title: "Frontend", items: ["React.js", "Next.js", "Tailwind CSS", "React Bootstrap", "Semantic UI"] },
+    { title: "Backend", items: ["Node.js", "Express.js", "Zend Framework", "RESTful APIs"] },
+    { title: "Databases", items: ["MySQL", "MSSQL Server", "MongoDB"] },
+    { title: "Cloud & DevOps", items: ["EC2", "S3", "Lambda", "RDS", "Amplify", "ELB"] },
+    { title: "Tools & Testing", items: ["Git", "Docker", "Postman", "VS Code", "Shopify", "Jest"] }
+  ];
+
+  return (
+    <div className="w-full my-8">
+      <h2 className="text-2xl font-bold text-black dark:text-white mb-6">Technical Skills</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
+        {skillGroups.map((group) => (
+          <div key={group.title} className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+            <h3 className="text-lg font-semibold text-black dark:text-white mb-3">{group.title}</h3>
+            <div className="flex flex-wrap gap-2">
+              {group.items.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 text-sm bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
+function featuredProjects() {
+  const projects = [
+    { name:"Anu Cakes", type: "ReactJS/AWS", description: "Cake website for an small business", link: "https://anucakes.lk", image: "/anucakes_ss.jpg" }
+    // { name:"Contractor Management Portal", type: "ReactJS/AWS", description: "Track and manage external contractor work", link: "https://jobs.sipvittoria.com", image: "/contractorManagementPortal_ss.jpg" }
+  ]
+
+  return (
+    <div className="w-full my-8">
+      <h2 className="text-2xl font-bold text-black dark:text-white mb-6">Featured Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
+          {projects.map((project, index) => (
+            <a
+              key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+            >
+              <div className="relative w-full h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-bold text-black dark:text-white mb-2">{project.name}</h3>
+                <p className="text-sm text-blue-600 dark:text-blue-400 mb-2">{project.type}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">{project.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+    </div>
+  );
+}
 
 function footer() {
 
@@ -125,6 +150,7 @@ export default function Home() {
     {/* MAIN CONTENT */}
       {contactLinks()}
       {listTechnicalSkills()}
+      {featuredProjects()}
     {/* FOOTER (Copyright, Links) */}
       {footer()}
     </div>
