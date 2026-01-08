@@ -1,11 +1,20 @@
+function navbar() {
+  return (
+    <header>
+      <nav className="w-full bg-gray-100 dark:bg-gray-800 text-white py-4 px-8 fixed top-0 left-0 z-50 shadow-md">KH
+      </nav>
+    </header>
+  );
+}
+
 function heroSection() {
   return (
     <div className="max-w-2xl text-center mb-12">
         <p className="text-blue-600 dark:text-blue-400 font-semibold mb-4 tracking-wide uppercase text-sm">Welcome</p>
         <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-4 leading-tight">
-          Hi, I'm <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Kenneth Heenatigala</span>
+          Hi, I'm <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Kenny</span>
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-2">Full Stack Developer</p>
+        <p className="text-xl text-gray-600 dark:text-gray-300 mb-2">Software Engineer</p>
         <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
           I provide solutions for businesses with modern technologies. Passionate about creating efficient, user-friendly solutions.
         </p>
@@ -93,8 +102,8 @@ function listTechnicalSkills() {
 
 function featuredProjects() {
   const projects = [
-    { name:"Anu Cakes", type: "ReactJS/AWS", description: "Cake website for an small business", link: "https://anucakes.lk", image: "/anucakes_ss.jpg" }
-    // { name:"Contractor Management Portal", type: "ReactJS/AWS", description: "Track and manage external contractor work", link: "https://jobs.sipvittoria.com", image: "/contractorManagementPortal_ss.jpg" }
+    { name:"Anu Cakes", type: "ReactJS/AWS", description: "Cake website for an small business", link: "https://anucakes.lk", image: "/anucakes_ss.jpg" },
+    { name:"Contractor Management Portal", type: "ReactJS/AWS", description: "Track and manage external contractor work", link: "https://jobs.sipvittoria.com", image: "/contractorManagementPortal_ss.jpg" }
   ]
 
   return (
@@ -144,6 +153,8 @@ function footer() {
 export default function Home() {
   return (
   <div className="w-full bg-white dark:bg-gray-900">
+    {/* NAVBAR/ HEADER */}
+    {navbar()}
     <div className="flex flex-col items-center justify-center py-60 px-4 bg-white dark:bg-gray-900">
     {/* HERO SECTION */}
       {heroSection()}
