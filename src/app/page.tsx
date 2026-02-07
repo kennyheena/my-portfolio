@@ -1,7 +1,36 @@
+import React from "react";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+
+class TechnicalSkills {
+  skillGroups = [
+    { title: "Languages", items: ["JavaScript", "TypeScript", "Objective-C", "PHP", "HTML", "CSS", "SQL"] },
+    { title: "Frontend", items: ["React.js", "Next.js", "Tailwind CSS", "React Bootstrap", "Semantic UI"] },
+    { title: "Backend", items: ["Node.js", "Express.js", "Zend Framework", "RESTful APIs"] },
+    { title: "Databases", items: ["MySQL", "MSSQL Server", "MongoDB"] },
+    { title: "Cloud & DevOps", items: ["EC2", "S3", "Lambda", "RDS", "Amplify", "ELB"] },
+    { title: "Tools & Testing", items: ["Git", "Docker", "Postman", "VS Code", "Shopify", "Jest"] }
+  ];
+
+  getAll() {
+    return this.skillGroups;
+  }
+}
+
+
 function navbar() {
+
   return (
-    <header>
-      <nav className="w-full bg-gray-100 dark:bg-gray-800 text-white py-4 px-8 fixed top-0 left-0 z-50 shadow-md">KH
+    <header id="home">
+      <nav className="w-full bg-gray-100 dark:bg-gray-800 text-white p-5 px-8 fixed top-0 left-0 z-50 shadow-md">
+        <ul>
+          <li className="float-left mr-5 hover:text-blue-600 dark:text-white text-black"><a href="#home">Home</a></li>
+          <li className="float-left mr-5 hover:text-blue-600 dark:text-white text-black"><a href="#skills">Skills</a></li>
+          <li className="float-left mr-5 hover:text-blue-600 dark:text-white text-black"><a href="#projects">Projects</a></li>
+        </ul>
+        <a href="https://github.com/kennyheena/my-portfolio" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="float-right text-black dark:text-white hover:text-blue-600 transition-colors">
+        <FaGithub className="w-6 h-6" />
+        </a>
       </nav>
     </header>
   );
@@ -9,32 +38,29 @@ function navbar() {
 
 function heroSection() {
   return (
-    <div className="max-w-2xl text-center mb-12">
+    <div className="max-w-2xl text-center mb-25">
         <p className="text-blue-600 dark:text-blue-400 font-semibold mb-4 tracking-wide uppercase text-sm">Welcome</p>
         <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-4 leading-tight">
-          Hi, I'm <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Kenny</span>
+          Hi, I'm <span className="bg-linear-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Kenny</span>
         </h1>
+        <img className="rounded-full block mx-auto w-30 h-30 mb-5" src="./logo.jpg"></img>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-2">Software Engineer</p>
         <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-          I provide solutions for businesses with modern technologies. Passionate about creating efficient, user-friendly solutions.
+          I provide solutions for businesses with modern technologies. Passionate about creating efficient, user-friendly solutions and learning new technologies.
         </p>
       </div>
   );
 }
 
-function GitHubIcon({ className = "h-5 w-5" }) {
+function GitHubIcon() {
   return (
-    <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 496 512" aria-hidden="true">
-      <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-    </svg>
+    <FaGithub />
   );
 }
 
-function LinkedInIcon({ className = "h-5 w-5" }) {
+function LinkedInIcon() {
   return (
-    <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512" aria-hidden="true">
-      <path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
-    </svg>
+    <FaLinkedin />
   );
 }
 
@@ -45,7 +71,7 @@ function contactLinks() {
   ];
 
   return (
-    <div id="contact-me" className="w-full my-12">
+    <div className="w-full mb-25">
       <div className="flex flex-col md:flex-row items-center justify-center gap-4">
         {contacts.map(({ type, url, Icon }) => (
           <a
@@ -66,17 +92,11 @@ function contactLinks() {
 }
 
 function listTechnicalSkills() {
-  const skillGroups = [
-    { title: "Languages", items: ["JavaScript", "TypeScript", "Objective-C", "PHP", "HTML", "CSS", "SQL"] },
-    { title: "Frontend", items: ["React.js", "Next.js", "Tailwind CSS", "React Bootstrap", "Semantic UI"] },
-    { title: "Backend", items: ["Node.js", "Express.js", "Zend Framework", "RESTful APIs"] },
-    { title: "Databases", items: ["MySQL", "MSSQL Server", "MongoDB"] },
-    { title: "Cloud & DevOps", items: ["EC2", "S3", "Lambda", "RDS", "Amplify", "ELB"] },
-    { title: "Tools & Testing", items: ["Git", "Docker", "Postman", "VS Code", "Shopify", "Jest"] }
-  ];
+  const skills = new TechnicalSkills();
+  const skillGroups = skills.getAll();
 
   return (
-    <div className="w-full my-8">
+    <div id="skills" className="w-full mb-25">
       <h2 className="text-2xl font-bold text-black dark:text-white mb-6">Technical Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
         {skillGroups.map((group) => (
@@ -102,12 +122,12 @@ function listTechnicalSkills() {
 
 function featuredProjects() {
   const projects = [
-    { name:"Anu Cakes", type: "ReactJS/AWS", description: "Cake website for an small business", link: "https://anucakes.lk", image: "/anucakes_ss.jpg" },
-    { name:"Contractor Management Portal", type: "ReactJS/AWS", description: "Track and manage external contractor work", link: "https://jobs.sipvittoria.com", image: "/contractorManagementPortal_ss.jpg" }
+    { name:"Anu Cakes", type: "ReactJS - Bootstrap - AWS Amplify", description: "Cake website for an small business. Ability to view their gallery and enquire about cakes via Email or social media", link: "https://anucakes.lk", image: "/anucakes_ss.jpg" },
+    { name:"Contractor Management Portal", type: "ReactJS - Bootstrap - AWS EC2", description: "Track and manage external contractor work for vittoria coffee service sector. Consist of features such as tracking of the hours, location restrictions and email job information with attached multimedia", link: "https://jobs.sipvittoria.com", image: "/contractorManagementPortal_ss.jpg" }
   ]
 
   return (
-    <div className="w-full my-8">
+    <div id="projects" className="w-full mb-25">
       <h2 className="text-2xl font-bold text-black dark:text-white mb-6">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
           {projects.map((project, index) => (
@@ -142,9 +162,9 @@ function footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-gray-100 dark:bg-gray-800 text-white py-8 px-4">
+    <footer className="w-full bg-gray-100 dark:bg-gray-800 p-5 bottom-0 fixed">
       <div className="w-full mx-auto text-center">
-        <p>Copyright © Kenneth Heenatigala {currentYear}. All rights reserved.</p>
+        <p className="dark:text-white text-black">Copyright © Kenneth Heenatigala {currentYear}. All rights reserved.</p>
       </div>
     </footer>
   );
