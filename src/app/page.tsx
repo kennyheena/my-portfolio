@@ -162,7 +162,7 @@ function footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-gray-100 dark:bg-gray-800 p-5 bottom-0 fixed">
+    <footer className="w-full bg-gray-100 dark:bg-gray-800 p-5 bottom-0">
       <div className="w-full mx-auto text-center">
         <p className="dark:text-white text-black">Copyright © Kenneth Heenatigala {currentYear}. All rights reserved.</p>
       </div>
